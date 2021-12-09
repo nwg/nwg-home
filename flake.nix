@@ -7,19 +7,20 @@
     with flake-utils.lib;
     with nixpkgs.lib;
     let
-      util = flake-utils.lib;
+      util = flake-utils.lib.flake-utils;
       myHome = import ./myhome.nix;
       overlays = [ myHome.overlay ];
       getPkgs = system: import nixpkgs { inherit overlays system; };
-      systems = util.supportedSystems;
+      systems = builtins.trace (builtins.toString util.defaultSystems) util.defaultSystems;
+      forSystems = genAttrs systems;
     in {
       pkgs = genAttrs systems getPkgs;
 
-      packages = forSystems systems (system: {
+      packages = forSystems (system: {
         nwgHome = self.pkgs."${system}".nwgHome;
       });
 
-      defaultPackage = forSystems systems (system: self.packages."${system}".nwgHome);
+      defaultPackage = forSystems (system: self.packages."${system}".nwgHome);
     };
 
 }
