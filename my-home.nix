@@ -18,13 +18,13 @@
         jq
         yarn
         yarn2nix
-        vlc
       ];
 
       nodejs = final.nodejs_latest;
       nodejs-slim = final.nodejs-slim_latest;
       nodePackages = final.nodePackages_latest;
 
+      /*
       vlc = let
         withDarwin = self: with self; {
           stdenv = prev.stdenv // {
@@ -37,6 +37,7 @@
         darwinScope = pkgs.lib.makeScope prev.libsForQt5.newScope withDarwin;
       in
         darwinScope.callPackage "${nixpkgs}/pkgs/applications/video/vlc" {};
+        */
       /*
       vlc = prev.vlc.overrideAttrs (oldAttrs: {
         meta.platforms = oldAttrs.meta.platforms ++ lib.platforms.darwin;
