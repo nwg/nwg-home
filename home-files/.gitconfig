@@ -1,0 +1,20 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Nathaniel Griswold
+email = nategriswold@gmail.com
+
+[alias]
+    co = checkout
+    br = branch
+    st = status
+    dc = diff --cached
+    ca = commit --amend
+
+[credential]
+    helper = osxkeychain
+[credential "https://github.com"]
+    username = nwg
+
+[init]
+	defaultBranch = main
