@@ -47,7 +47,7 @@ use_racket () {
 use_racket
 #exec rash-repl
 
-gpgconf=/Users/griswold/.nix-profile/bin/gpgconf
+gpgconf="$HOME/.nix-profile/bin/gpgconf"
 if [ -x "$gpgconf" ]; then
   export SSH_AUTH_SOCK="$("$gpgconf" --list-dirs agent-ssh-socket)"
   "$gpgconf" --launch gpg-agent
