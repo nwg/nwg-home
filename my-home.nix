@@ -12,7 +12,7 @@
         emacs
         sieve-connect
         gnupg
-        nodejs_latest
+        nodejs
         ripgrep
         github-cli
         jq
