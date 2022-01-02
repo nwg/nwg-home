@@ -18,6 +18,7 @@
         jq
         yarn
         yarn2nix
+        gnumake
       ];
 
       /*
