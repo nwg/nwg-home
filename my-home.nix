@@ -20,10 +20,6 @@
         yarn2nix
       ];
 
-      nodejs = final.nodejs_latest;
-      nodejs-slim = final.nodejs-slim_latest;
-      nodePackages = final.nodePackages_latest;
-
       /*
       vlc = let
         withDarwin = self: with self; {
