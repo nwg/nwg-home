@@ -21,6 +21,9 @@
         gnumake
       ];
 
+      nodejs = final.nodejs-14_x;
+      nodejs-slim = final.nodejs-slim-14_x;
+
       /*
       vlc = let
         withDarwin = self: with self; {
