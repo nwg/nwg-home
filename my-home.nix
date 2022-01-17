@@ -19,6 +19,7 @@
         yarn
         yarn2nix
         gnumake
+        nmap
       ];
 
       nodejs = final.nodejs-14_x;
